@@ -1,5 +1,5 @@
 import Player from '@vimeo/player';
-import { throttle } from 'lodash';
+import throttle from 'lodash.throttle';
 
 const iframe = document.querySelector('#vimeo-player');
 const player = new Player(iframe);
@@ -11,12 +11,11 @@ player
 .catch(function (error) {
     switch (error.name) {
         case 'RangeError':
-            console.log('The time was less than 0 or greater than the video`s duration')
+            console.log('The time was less than 0 or greater than the video`s duration');
             break;
 
         default:
-            console.log('Some other error occurred')
-            break;
+            console.log('Some other error occurred');
     }
 });
 
